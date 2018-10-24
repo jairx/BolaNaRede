@@ -13,4 +13,12 @@ export class HomePage {
   onTimes() : void {
     this.navCtrl.push('TimesPage');
   }
+
+  onCampeonato() : void {
+    this.navCtrl.push('CampeonatosPage');
+  }
+
+  onJogos() : void {
+    this.navCtrl.push('JogosPage');
+  }
 }
