@@ -11,4 +11,13 @@ export class ContactPage {
 
   }
 
+  textHide(e1) : void {
+    var display = document.getElementById(e1).style.display;
+    if(display == "none"){
+      document.getElementById(e1).style.display = 'block';
+    }else{
+      document.getElementById(e1).style.display = 'none';
+    }
+  }
+
 }
