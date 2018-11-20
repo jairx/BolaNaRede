@@ -55,7 +55,7 @@ FOREIGN KEY(ID_SELECAO) REFERENCES SELECAO (ID_SELECAO)
 CREATE TABLE JOGO (
 ID_JOGO int(4) PRIMARY KEY auto_increment,
 DATASELECAO datetime not null,
-TERMINADO int(1),
+TERMINADO boolean,
 VENCEDOR int(4),
 ID_SELECAO_1 int(4) not null,
 ID_SELECAO_2 int(4) not null,
