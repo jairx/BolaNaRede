@@ -1,6 +1,6 @@
 -- Gera��o de Modelo f�sico
 -- Sql ANSI 2003 - brModelo.
-tati a gatcha
+
 CREATE DATABASE bolanarede;
 
 USE bolanarede;
