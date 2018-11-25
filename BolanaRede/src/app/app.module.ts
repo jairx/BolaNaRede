@@ -13,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Camera, CameraOptions} from '@ionic-native/camera';
+import { ServidorProvider } from '../providers/servidor/servidor';
+
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import {Camera, CameraOptions} from '@ionic-native/camera';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +43,8 @@ import {Camera, CameraOptions} from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ServidorProvider
   ]
 })
 export class AppModule {}
