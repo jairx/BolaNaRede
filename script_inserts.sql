@@ -2,7 +2,7 @@ insert into TIPO_FALTA (CARTAO)
 values ('Amarelo'), ('Vermelho');
 
 insert into CAMPEONATO (NOME)
-values ('Juventus da Eternidade'),
+values ('Juventus Eterno'),
         ('Filósofos do Gramado'),
         ('Futebol Urgente');
 
