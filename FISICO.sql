@@ -13,7 +13,7 @@ CARTAO varchar(10) not null
 CREATE TABLE SELECAO (
 ID_SELECAO int(4) PRIMARY KEY auto_increment,
 NOME varchar(40) not null,
-DATA_CRIACAO datetime not null,
+DATA_CRIACAO datetime not null default now(),
 COR_CAMISA_1 varchar(20) not null,
 COR_CAMISA_2 varchar(20),
 COR_CAMISA_3 varchar(20)
@@ -43,7 +43,7 @@ FOREIGN KEY(ID_SELECAO) REFERENCES SELECAO (ID_SELECAO)
 
 CREATE TABLE JOGO (
 ID_JOGO int(4) PRIMARY KEY auto_increment,
-DATATIME datetime not null,
+DATATIME datetime not null default now(),
 TERMINADO boolean,
 VENCEDOR int(4),
 ID_SELECAO_1 int(4) not null,
@@ -58,7 +58,7 @@ FOREIGN KEY(ID_CAMPEONATO) REFERENCES CAMPEONATO (ID_CAMPEONATO)
 CREATE TABLE GOL (
 ID_GOL int(4) PRIMARY KEY auto_increment,
 TEMPO int(1) not null,
-CRONOMETRO datetime not null,
+CRONOMETRO datetime not null default now(),
 NUMERO_CAMISA int(2) not null,
 ID_SELECAO int(4) not null,
 ID_SELECAO_MARCADOR int(4) not null,
