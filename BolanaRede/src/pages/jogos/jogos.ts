@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServidorProvider } from './../../providers/servidor/servidor';
 
 /**
  * Generated class for the JogosPage page.
@@ -15,7 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class JogosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tipoFalta: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public servidor: ServidorProvider) {
+    this.getRetornar();
+  }
+
+  getRetornar(){
+    this.servidor.getPegar()
+      .subscribe(
+        data => this.tipoFalta = data,
+        err => console.log(err)
+      );
   }
 
   ionViewDidLoad() {

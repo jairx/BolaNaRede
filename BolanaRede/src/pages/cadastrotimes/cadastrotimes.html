@@ -14,19 +14,33 @@
 
 
 <ion-content padding class="estilo03">
-  <form>
+
     <h1>Bola na Rede</h1>
-    <h2>Nome time</h2>
-    <input type="text">
-    <br>
-    <h2>Data de criação</h2>
-    <input type="datetime">
-    <br>
-    <h2>Cor de camisa</h2>
-    <input type="text">
-    <br>
-    <br>
-    <button ion-button>Cadastrar</button>
-  </form>
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome do time</ion-label>
+        <ion-input type="text" [(ngModel)]="nomeTime"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cor da camisa 1</ion-label>
+        <ion-input type="text" [(ngModel)]="corCamisa1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Cor da camisa 2</ion-label>
+          <ion-input type="text" [(ngModel)]="corCamisa2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Cor da camisa 3</ion-label>
+          <ion-input type="text" [(ngModel)]="corCamisa3"></ion-input>
+      </ion-item>
+    </ion-list>
+
+  <div>
+    <button ion-button full (click)="cadastrar()">Cadastrar</button>
+  </div>
 
 </ion-content>
