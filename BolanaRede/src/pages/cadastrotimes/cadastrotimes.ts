@@ -32,22 +32,47 @@ export class CadastrotimesPage {
   }
 
   cadastrar() {
-    if(this.nomeTime == undefined || this.corCamisa1 == undefined){
+    if(this.nomeTime == '' || this.nomeTime == undefined ||
+        this.corCamisa1 == '' || this.corCamisa1 == undefined) {
+
         let alert = this.alertCtrl.create({
+
           title: 'Atenção',
           message: 'Preencha todos os campos!',
           buttons: ['OK']
+
         })
+
         alert.present();
-      }else{
+
+    }else{
 
         this.http.get(this.servidor.urlGet()+'cadastrarTime.php?nomeTime='+this.nomeTime+
                         '&corCamisa1='+this.corCamisa1+'&corCamisa2='+this.corCamisa2+
                         '&corCamisa3='+this.corCamisa3).pipe(map( res => res.json()))
                         .subscribe(
+
                           dados => {
-          }
-        )
+
+                            if(dados.valida.teste==1) {
+
+                              let alert = this.alertCtrl.create({
+
+                                title: 'Sucesso',
+                                message: 'Seleção cadastrada.',
+                                buttons: ['OK']
+
+                              })
+
+                              alert.present();
+
+                              this.navCtrl.setRoot('TimesPage');
+
+                            }
+
+                          }
+
+                        )
 
       }
   }

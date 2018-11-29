@@ -26,14 +26,4 @@ export class ServidorProvider {
     return this.http.get(this.url + 'listaTipoFalta.php').pipe(map(res => res.json()));
   }
 
-  postData(parans) {
-    let headers = new Headers({ 'Content-Type' : 'application/x-www-form-urlencoded'});
-    return this.http.post(this.api + "apiCadastro.php", parans, {
-      headers:headers,
-      method:"POST"
-    }).map(
-          (res:Response) => {return res.json();}
-    );
-  }
-
 }
