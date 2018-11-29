@@ -28,7 +28,7 @@ export class NovocampeonatoPage {
     console.log('ionViewDidLoad NovocampeonatoPage');
   }
 
-  cadastrar() {
+  cadastrarCampeonato() {
     if(this.nomeCampeonato == '' || this.nomeCampeonato == undefined) {
 
         let alert = this.alertCtrl.create({
@@ -43,8 +43,8 @@ export class NovocampeonatoPage {
 
     }else{
 
-        this.http.get(this.servidor.urlGet()+'cadastrarCampeonato.php?nomeCampeonato='+this.nomeCampeonato)
-                      .pipe(map( res => res.json()))
+        this.http.get(this.servidor.urlGet()+'cadastrarCampeonato.php?nomeCampeonato='
+                      +this.nomeCampeonato).pipe(map( res => res.json()))
                         .subscribe(
 
                           dados => {
