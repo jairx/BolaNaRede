@@ -24,6 +24,11 @@ export class TimesPage {
 
   onNovo() : void {
     this.navCtrl.push('CadastrotimesPage');
+
+  }
+
+  get(){
+
   }
 
 }
