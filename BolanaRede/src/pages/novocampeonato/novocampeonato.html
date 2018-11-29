@@ -14,14 +14,20 @@
 
 
 <ion-content padding class="estilo06">
-    <form>
-        <h1>Bola na rede</h1>
-        <h2>Nome campeonato</h2>
-        <input type="text">
 
-        <br>
-        <br>
-        <button ion-button>Cadastrar</button>
-      </form>
+  <h1>Bola na Rede</h1>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Nome do campeonato</ion-label>
+        <ion-input type="text" [(ngModel)]="nomeCampeonato"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+  <div>
+    <button ion-button full (click)="cadastrar()">Cadastrar</button>
+  </div>
 
 </ion-content>
