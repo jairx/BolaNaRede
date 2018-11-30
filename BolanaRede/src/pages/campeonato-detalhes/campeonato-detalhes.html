@@ -5,14 +5,57 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>campeonatoDetalhes</ion-title>
+    <ion-title>Detalhes de Campeonato</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <h1>Bola na Rede</h1>
+    <br>
+    <br>
+  <h2>{{campeonato.nome}}</h2>
+    <br>
+    <br>
+  <h3>Times no Campeonato</h3>
+    <br>
+    <br>
+
+  <ion-list>
+      <ion-item (click)="goCampeonatoDetalhes(campeonato.idCampeonato)">
+        {{ campeonato.nome }}
+      </ion-item>
+  </ion-list>
+
+  <h3>Colocações</h3>
+    <br>
+    <br>
+
+  <ion-list>
+      <ion-item (click)="goCampeonatoDetalhes(campeonato.idCampeonato)">
+        {{ campeonato.nome }}
+      </ion-item>
+  </ion-list>
+
+  <h3>Jogos Pendentes</h3>
+    <br>
+    <br>
+
+  <ion-list>
+      <ion-item (click)="goCampeonatoDetalhes(campeonato.idCampeonato)">
+        {{ campeonato.nome }}
+      </ion-item>
+  </ion-list>
+
+  <h3>Jogos Passados</h3>
+  <br>
+  <br>
+
+  <ion-list>
+      <ion-item (click)="goCampeonatoDetalhes(campeonato.idCampeonato)">
+        {{ campeonato.nome }}
+      </ion-item>
+  </ion-list>
 
 </ion-content>

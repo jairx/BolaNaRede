@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServidorProvider } from '../../providers/servidor/servidor';
 
 /**
  * Generated class for the TimeDetalhesPage page.
@@ -15,11 +16,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TimeDetalhesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  time: any;
+  id: number;
+  nome: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+                public servidor: ServidorProvider) {
+                  this.getTimeDetalhes();
+                  this.id = navParams.get('id');
+                  this.nome = navParams.get('nome');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TimeDetalhesPage');
+  getTimeDetalhes() {
+
+    this.servidor.getSelecaoDetalhes(this.id).subscribe(
+      data => this.time = data,
+      err => console.log(err)
+    )
+
   }
 
 }

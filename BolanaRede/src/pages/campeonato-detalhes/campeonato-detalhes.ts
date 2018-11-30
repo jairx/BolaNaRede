@@ -16,13 +16,36 @@ import { ServidorProvider } from '../../providers/servidor/servidor';
 })
 export class CampeonatoDetalhesPage {
 
+  jogosRealizados: any;
+  jogosNaoRealizados: any;
+  campeonato: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public servidor: ServidorProvider) {
-
+                  this.getJogosRealizados();
+                  this.getJogosNaoRealizados();
+                  this.getCampeonato();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CampeonatoDetalhesPage');
+  getCampeonato() {
+    this.servidor.getCampeonatoDetalhes(this.campeonato.idCampeonato).subscribe(
+      data => this.campeonato = data,
+      err => console.log(err)
+    )
+  }
+
+  getJogosRealizados() {
+    this.servidor.getCampeonatoJogosRealizados(this.campeonato.idCampeonato).subscribe(
+      data => this.jogosRealizados = data,
+      err => console.log(err)
+    )
+  }
+
+  getJogosNaoRealizados() {
+    this.servidor.getCampeonatoJogosNaoRealizados(this.campeonato.idCampeonato).subscribe(
+      data => this.jogosNaoRealizados = data,
+      err => console.log(err)
+    )
   }
 
 }

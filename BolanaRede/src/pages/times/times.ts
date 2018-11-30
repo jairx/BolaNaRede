@@ -29,7 +29,11 @@ export class TimesPage {
   }
 
   goTimeDetalhes() : void {
-    this.navCtrl.push('TimeDetalhesPage');
+
+    this.navCtrl.push('TimeDetalhesPage', {
+      id: this.times.idSelecao,
+      nome: this.times.nome
+    });
   }
 
   getDados(){

@@ -21,7 +21,7 @@
   <h2>Times Cadastrados</h2>
 
   <ion-list>
-      <button ion-item *ngFor="let time of times" (click)="goTimeDetalhes(time.idSelecao)">
+      <button ion-item *ngFor="let time of times" (click)="goTimeDetalhes()">
         {{ time.nome }}
       </button>
   </ion-list>

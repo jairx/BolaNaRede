@@ -42,4 +42,20 @@ export class ServidorProvider {
     return this.http.get(this.url + 'listaTipoFalta.php').pipe(map(res => res.json()));
   }
 
+  getCampeonatoJogosRealizados(idCampeonato) {
+    return this.http.get(this.url+'campeonatoJogosRealizados.php?idCampeonato='+idCampeonato+'').pipe(map(res=>res.json()));
+  }
+
+  getCampeonatoJogosNaoRealizados(idCampeonato) {
+    return this.http.get(this.url+'campeonatoJogosNaoRealizados.php?idCampeonato='+idCampeonato+'').pipe(map(res=>res.json()));
+  }
+
+  getCampeonatoDetalhes(idCampeonato) {
+    return this.http.get(this.url+'campeonatoDetalhes.php?idCampeonato='+idCampeonato+'').pipe(map(res=>res.json()));
+  }
+
+  getSelecaoDetalhes(idSelecao) {
+    return this.http.get(this.url+'timeDetalhes.php?idSelecao='+idSelecao+'').pipe(map(res=>res.json()));
+  }
+
 }
