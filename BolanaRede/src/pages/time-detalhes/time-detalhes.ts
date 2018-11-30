@@ -23,8 +23,7 @@ export class TimeDetalhesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public servidor: ServidorProvider) {
                   this.getTimeDetalhes();
-                  this.id = navParams.get('id');
-                  this.nome = navParams.get('nome');
+                  this.navParams.get('thing1');
   }
 
   getTimeDetalhes() {

@@ -18,10 +18,12 @@ import { TimeDetalhesPage } from '../time-detalhes/time-detalhes';
 export class TimesPage {
 
   times: any[];
+  idSelecao: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public servidor: ServidorProvider) {
                   this.getDados();
+                  this.idSelecao = this.times['idSelecao'];
   }
 
   onNovo() : void {
@@ -31,8 +33,7 @@ export class TimesPage {
   goTimeDetalhes() : void {
 
     this.navCtrl.push('TimeDetalhesPage', {
-      id: this.times.idSelecao,
-      nome: this.times.nome
+      idSelecao: data1;
     });
   }
 
