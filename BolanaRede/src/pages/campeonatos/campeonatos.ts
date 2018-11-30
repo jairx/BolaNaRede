@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServidorProvider } from '../../providers/servidor/servidor';
 
 /**
  * Generated class for the CampeonatosPage page.
@@ -15,14 +16,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CampeonatosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  campeonatos: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+                public servidor: ServidorProvider) {
+                  this.getDados();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CampeonatosPage');
+  onNew() : void {
+    this.navCtrl.push('NovocampeonatoPage');
   }
 
-onNew() : void {
-  this.navCtrl.push('NovocampeonatoPage');
-}
+  getDados() {
+    this.servidor.getCampeonatos().subscribe(
+      data => this.campeonatos = data,
+      err => console.log(err)
+    )
+  }
+
 }

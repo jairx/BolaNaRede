@@ -34,6 +34,10 @@ export class ServidorProvider {
     return this.url;
   }
 
+  getCampeonatos() {
+    return this.http.get(this.url+'listaCampeonatos.php').map(res=>res.json());
+  }
+
   getPegar() {
     return this.http.get(this.url + 'listaTipoFalta.php').pipe(map(res => res.json()));
   }
