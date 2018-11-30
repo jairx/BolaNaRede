@@ -28,4 +28,48 @@ export class NovocampeonatoPage {
     console.log('ionViewDidLoad NovocampeonatoPage');
   }
 
+  cadastrar() {
+    if(this.nomeCampeonato == '' || this.nomeCampeonato == undefined) {
+
+        let alert = this.alertCtrl.create({
+
+          title: 'Atenção',
+          message: 'Preencha todos os campos!',
+          buttons: ['OK']
+
+        })
+
+        alert.present();
+
+    }else{
+
+        this.http.get(this.servidor.urlGet()+'cadastrarCampeonato.php?nomeCampeonato='+this.nomeCampeonato)
+                        .pipe(map( res => res.json()))
+                          .subscribe(
+
+                            dados => {
+
+                              if(dados.valida.teste==1) {
+
+                                let alert = this.alertCtrl.create({
+
+                                  title: 'Sucesso',
+                                  message: 'Campeonato cadastrado com sucesso!',
+                                  buttons: ['OK']
+
+                                })
+
+                                alert.present();
+
+                                this.navCtrl.setRoot('CampeonatosPage');
+
+                              }
+
+                            }
+
+                          )
+
+    }
+  }
+
 }

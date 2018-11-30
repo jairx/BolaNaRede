@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, ResponseOptions } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
+import { getScrollData } from 'ionic-angular/umd/components/input/input';
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the ServidorProvider provider.
@@ -13,9 +16,16 @@ import { map } from 'rxjs/operators';
 export class ServidorProvider {
 
   url: string = 'http://localhost/bolanarede/';
+  api: string = 'http://localhost/bolanarede/';
 
   constructor(public http: Http) {
-    console.log('Hello ServidorProvider Provider');
+
+  }
+
+  getTimes(){
+
+    return this.http.get(this.api+'apiRecupera.php').map(res => res.json());
+
   }
 
   urlGet() {

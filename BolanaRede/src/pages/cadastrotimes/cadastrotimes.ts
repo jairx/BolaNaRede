@@ -49,7 +49,7 @@ export class CadastrotimesPage {
 
         this.http.get(this.servidor.urlGet()+'cadastrarTime.php?nomeTime='+this.nomeTime+
                         '&corCamisa1='+this.corCamisa1+'&corCamisa2='+this.corCamisa2+
-                        '&corCamisa3='+this.corCamisa3).pipe(map( res => res.json()))
+                        '&corCamisa3='+this.corCamisa3).pipe(map(res => res.json()))
                         .subscribe(
 
                           dados => {
