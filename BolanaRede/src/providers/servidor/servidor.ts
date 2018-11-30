@@ -22,10 +22,12 @@ export class ServidorProvider {
 
   }
 
-  getTimes(){
-
+  getTimes() {
     return this.http.get(this.api+'apiRecupera.php').map(res => res.json());
+  }
 
+  getData() {
+    return this.http.get(this.url+'listaSelecoes.php').map(res=>res.json());
   }
 
   urlGet() {

@@ -20,14 +20,10 @@
   <br>
   <h2>Times Cadastrados</h2>
 
-  <ion-card>
-    <ion-card-content *ngFor="let time of times">
-      <h1>{{times.nome}}</h1>
-
-      <p>{{times.corCamisa1}}</p>
-      <p>{{times.corCamisa2}}</p>
-      <p>{{times.corCamisa3}}</p>
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+      <button ion-item *ngFor="let time of times" (click)="onNovo()">
+        {{ time.nome }}
+      </button>
+  </ion-list>
 
 </ion-content>

@@ -20,19 +20,15 @@ export class TimesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                 public servidor: ServidorProvider) {
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TimesPage');
+                  this.getDados();
   }
 
   onNovo() : void {
     this.navCtrl.push('CadastrotimesPage');
   }
 
-  getTimes(){
-    this.servidor.getTimes().subscribe(
+  getDados(){
+    this.servidor.getData().subscribe(
       data => this.times = data,
       err => console.log(err)
     )
