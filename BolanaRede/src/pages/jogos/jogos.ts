@@ -30,10 +30,6 @@ export class JogosPage {
       );
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JogosPage');
-  }
-
   onJogos() : void {
     this.navCtrl.push('JogosPage');
   }
