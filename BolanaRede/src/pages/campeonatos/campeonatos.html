@@ -20,7 +20,7 @@
   <h2>Campeonatos Cadastrados</h2>
 
   <ion-list>
-      <button ion-item *ngFor="let campeonato of campeonatos" (click)="goTimeDetalhes(campeonato.idCampeonato)">
+      <button ion-item *ngFor="let campeonato of campeonatos" (click)="goCampeonatoDetalhes(campeonato.idCampeonato)">
         {{ campeonato.nome }}
       </button>
   </ion-list>

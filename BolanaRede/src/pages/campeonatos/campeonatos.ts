@@ -27,6 +27,10 @@ export class CampeonatosPage {
     this.navCtrl.push('NovocampeonatoPage');
   }
 
+  goCampeonatoDetalhes() : void {
+    this.navCtrl.push('CampeonatoDetalhesPage');
+  }
+
   getDados() {
     this.servidor.getCampeonatos().subscribe(
       data => this.campeonatos = data,

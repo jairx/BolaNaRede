@@ -1,3 +1,4 @@
+import { CampeonatoDetalhesPage } from './../pages/campeonato-detalhes/campeonato-detalhes';
 
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TimeDetalhesPage } from '../pages/time-detalhes/time-detalhes';
+import { CampeonatoDetalhesPage } from '../pages/campeonato-detalhes/campeonato-detalhes';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,6 +28,7 @@ import { HttpModule } from '@angular/http';
     HomePage,
     TabsPage,
     TimeDetalhesPage,
+    CampeonatoDetalhesPage,
 
   ],
   imports: [
@@ -40,7 +43,8 @@ import { HttpModule } from '@angular/http';
     ContactPage,
     HomePage,
     TabsPage,
-    TimeDetalhesPage
+    TimeDetalhesPage,
+    CampeonatoDetalhesPage
   ],
   providers: [
     StatusBar,
