@@ -1,6 +1,7 @@
 import { ServidorProvider } from './../../providers/servidor/servidor';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TimeDetalhesPage } from '../time-detalhes/time-detalhes';
 
 /**
  * Generated class for the TimesPage page.
@@ -25,6 +26,10 @@ export class TimesPage {
 
   onNovo() : void {
     this.navCtrl.push('CadastrotimesPage');
+  }
+
+  goTimeDetalhes() : void {
+    this.navCtrl.push('TimeDetalhesPage');
   }
 
   getDados(){

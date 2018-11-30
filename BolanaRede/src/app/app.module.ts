@@ -8,6 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TimeDetalhesPage } from '../pages/time-detalhes/time-detalhes';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,6 +25,7 @@ import { HttpModule } from '@angular/http';
     ContactPage,
     HomePage,
     TabsPage,
+    TimeDetalhesPage,
 
   ],
   imports: [
@@ -37,7 +39,8 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TimeDetalhesPage
   ],
   providers: [
     StatusBar,
